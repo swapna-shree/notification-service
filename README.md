@@ -205,41 +205,7 @@ Sends a notification through the specified channel.
 **Method**: `POST`  
 **Auth required**: No (In production, you should add authentication)
 
-**Request body**:
-```json
-{
-  "type": "email|sms|in-app|push",
-  "userId": "user123",
-  
-  // For email
-  "email": "user@example.com",  // Optional if userId is provided
-  "message": {
-    "subject": "Hello",
-    "body": "This is a test email"
-  },
-  
-  // For SMS
-  "phone": "+1234567890",
-  "message": "This is a test SMS",
-  
-  // For in-app
-  "message": {
-    "title": "Hello",
-    "body": "This is an in-app notification",
-    "data": { "action": "view", "entityId": "123" }
-  },
-  
-  // For push
-  "deviceToken": "device-token-123",  // For single device
-  // OR
-  "deviceTokens": ["token1", "token2"], // For multiple devices
-  "message": {
-    "title": "Hello",
-    "body": "This is a push notification",
-    "data": { "action": "open", "entityId": "123" }
-  }
-}
-```
+Authentication
 
 ### Get user notifications
 Retrieves notifications for a specific user.
@@ -247,16 +213,6 @@ Retrieves notifications for a specific user.
 **URL**: `/api/users/:id/notifications`  
 **Method**: `GET`
 
-## Architecture
-
-The service uses a message-based architecture with RabbitMQ:
-
-1. API server receives notification requests
-2. Requests are validated and rate-limited
-3. Valid requests are sent to RabbitMQ message queue
-4. Worker processes consume messages from RabbitMQ
-5. Workers send notifications through appropriate channels
-6. Results and metrics are stored in Redis for monitoring
 
 ## Rate Limiting Configuration
 
