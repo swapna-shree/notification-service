@@ -39,3 +39,7 @@ coverage
 
 # Redis dump file
 dump.rdb 
+
+# Temporary removed files (for future implementation)
+services/pushService.js
+pushservice_backup/ 

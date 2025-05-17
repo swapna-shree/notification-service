@@ -1,3 +1,27 @@
+# 📣 Notification Service: Your Message's VIP Lounge 🚀
+
+> **Where messages get the red-carpet treatment before sliding into your users' DMs!**
+
+Ever wished your app's notifications weren't as boring as watching paint dry? Say no more! This notification service is the cool DJ that ensures your messages drop with perfect timing and style. It's not just a notification service; it's notification service with *attitude*. 
+
+## ✨ What's Cooking?
+
+* 📧 **Email Notifications** - Because sometimes "u up?" needs proper formatting
+* 📱 **SMS Alerts** - Text messages that actually arrive (revolutionary, we know)
+* 🔔 **Push Notifications** - Coming soon! Making phones buzz with purpose (Planned feature)
+* 📲 **In-App Messages** - Sliding into your users' app experience like it owns the place
+
+## 🔥 The Secret Sauce
+
+* **RabbitMQ** - Our tireless message courier that never takes coffee breaks
+* **Redis** - The bouncer that says "Whoa there! Too many messages, buddy" when needed
+* **Express API** - Slick endpoints that make developers actually *want* to read the docs
+* **Scalability** - Handles messages from whisper to stadium-level shouting
+
+Built with Node.js and enough caffeine to power a small city. Fork it, star it, or just admire it from afar. Your notifications will thank you.
+
+---
+
 # Notification Service
 
 A scalable, multi-channel notification service built with Node.js, Redis, and RabbitMQ. This service supports email, SMS, in-app, and push notifications with rate limiting and reliability features.
@@ -8,7 +32,7 @@ A scalable, multi-channel notification service built with Node.js, Redis, and Ra
   - Email notifications (via Nodemailer with any SMTP server)
   - SMS notifications (via Twilio)
   - In-app notifications (stored in Redis)
-  - Push notifications (via Firebase Cloud Messaging)
+  - Push notifications (via Firebase Cloud Messaging) - *Coming soon as a future feature*
 
 - **Reliability:**
   - Event-driven architecture using RabbitMQ
@@ -44,7 +68,7 @@ notification-service/
 │   ├── emailService.js      # Email notification service
 │   ├── smsService.js        # SMS notification service
 │   ├── inAppService.js      # In-app notification service
-│   └── pushService.js       # Push notification service
+│   └── pushService.js       # Push notification service (coming soon)
 ├── utils/                   # Utility functions
 │   └── rateLimiter.js       # Rate limiting utility
 ├── app.js                   # Express application setup
@@ -64,7 +88,7 @@ notification-service/
 - RabbitMQ 3.x or higher
 - SMTP server for email notifications
 - Twilio account for SMS notifications
-- Firebase project for push notifications
+- Firebase project for push notifications (for future implementation)
 
 ## Installation
 
@@ -106,9 +130,9 @@ TWILIO_ACCOUNT_SID=your_twilio_sid
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_PHONE_NUMBER=your_twilio_phone
 
-# For push notifications, get from Firebase console
-FCM_SERVER_KEY=your_firebase_server_key
-FCM_API_URL=https://fcm.googleapis.com/fcm/send
+# For future push notifications feature (coming soon)
+# FCM_SERVER_KEY=your_firebase_server_key
+# FCM_API_URL=https://fcm.googleapis.com/fcm/send
 ```
 
 ## Running the Service

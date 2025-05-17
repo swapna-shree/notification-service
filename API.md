@@ -29,7 +29,7 @@ Sends a notification through the specified channel.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| type | string | Yes | Notification type: "email", "sms", "in-app", or "push" |
+| type | string | Yes | Notification type: "email", "sms", "in-app", or "push" (push coming soon) |
 | userId | string | Yes | User ID for the notification recipient |
 | message | object/string | Yes | Notification content (format varies by type) |
 
@@ -109,7 +109,7 @@ Content-Type: application/json
 }
 ```
 
-**Push Notification (Single Device)**:
+**Push Notification (Coming Soon)**:
 ```json
 POST /notifications
 Content-Type: application/json
@@ -130,7 +130,7 @@ Content-Type: application/json
 }
 ```
 
-**Push Notification (Multiple Devices)**:
+**Push Notification to Multiple Devices (Coming Soon)**:
 ```json
 POST /notifications
 Content-Type: application/json
