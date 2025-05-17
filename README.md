@@ -1,30 +1,24 @@
-# 📣 Notification Service: Your Message's VIP Lounge 🚀
-
-> **Where messages get the red-carpet treatment before sliding into your users' DMs!**
-
-Ever wished your app's notifications weren't as boring as watching paint dry? Say no more! This notification service is the cool DJ that ensures your messages drop with perfect timing and style. It's not just a notification service; it's notification service with *attitude*. 
-
-## ✨ What's Cooking?
-
-* 📧 **Email Notifications** - Because sometimes "u up?" needs proper formatting
-* 📱 **SMS Alerts** - Text messages that actually arrive (revolutionary, we know)
-* 🔔 **Push Notifications** - Coming soon! Making phones buzz with purpose (Planned feature)
-* 📲 **In-App Messages** - Sliding into your users' app experience like it owns the place
-
-## 🔥 The Secret Sauce
-
-* **RabbitMQ** - Our tireless message courier that never takes coffee breaks
-* **Redis** - The bouncer that says "Whoa there! Too many messages, buddy" when needed
-* **Express API** - Slick endpoints that make developers actually *want* to read the docs
-* **Scalability** - Handles messages from whisper to stadium-level shouting
-
-Built with Node.js and enough caffeine to power a small city. Fork it, star it, or just admire it from afar. Your notifications will thank you.
-
----
-
 # Notification Service
 
-A scalable, multi-channel notification service built with Node.js, Redis, and RabbitMQ. This service supports email, SMS, in-app, and push notifications with rate limiting and reliability features.
+A scalable, multi-channel notification service built with Node.js, Redis, and RabbitMQ. This service supports email, SMS, in-app notifications, with rate limiting and reliability features.
+
+## Overview
+
+This notification service provides reliable delivery of notifications across multiple channels:
+
+* **Email Notifications** - Formatted email messages via SMTP
+* **SMS Alerts** - Text message notifications via Twilio
+* **Push Notifications** - Coming soon as a planned feature
+* **In-App Messages** - Real-time application notifications
+
+## Core Technologies
+
+* **RabbitMQ** - Message queue for reliable asynchronous processing
+* **Redis** - Rate limiting and data storage
+* **Express API** - RESTful API endpoints
+* **Node.js** - Scalable runtime environment
+
+---
 
 ## Features
 
@@ -61,7 +55,6 @@ notification-service/
 │   └── worker.js            # RabbitMQ worker script
 ├── middleware/              # Express middleware
 │   └── rateLimitMiddleware.js    # Rate limiting middleware
-
 ├── routes/                  # API routes
 │   └── notificationRoutes.js # Notification API routes
 ├── services/                # Service implementations
