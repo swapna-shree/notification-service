@@ -1,5 +1,4 @@
 const { v4: uuidv4 } = require('uuid');
-const notifications = [];
 
 class Notification {
   constructor(userId, type, message) {
@@ -8,11 +7,6 @@ class Notification {
     this.type = type;
     this.message = message;
     this.timestamp = new Date();
-    notifications.push(this);
-  }
-
-  static getByUserId(userId) {
-    return notifications.filter(n => n.userId === userId);
   }
 }
 

@@ -1,10 +1,24 @@
 require("dotenv").config();
 const http = require("http");
 const app = require("./app");
-const { initSocket } = require("./utils/websocket");
+
+// Initialize notification routes
+const notificationRoutes = require('./routes/notificationRoutes');
+app.use('/api', notificationRoutes);
 
 const server = http.createServer(app);
-initSocket(server);
-
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+  });
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Test the API with:`);
+  console.log(`curl -X POST http://localhost:${PORT}/api/notifications -H "Content-Type: application/json" -d "{\\"message\\": \\"Hello\\", \\"userId\\": \\"123\\", \\"type\\": \\"in-app\\"}"`);
+});

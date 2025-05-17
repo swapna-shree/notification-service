@@ -5,7 +5,8 @@ const {
   getUserNotifications,
 } = require('../controllers/notificationController');
 
-router.post('/', sendNotification);
+// API Endpoints
+router.post('/notifications', sendNotification);
 router.get('/users/:id/notifications', getUserNotifications);
 
 module.exports = router;
